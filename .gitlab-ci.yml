@@ -1,0 +1,58 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+    - when: never
+
+stages:
+  - lint
+  - test
+
+variables:
+  GRADLE_USER_HOME: "$CI_PROJECT_DIR/backend/.gradle"
+
+lint-backend:
+  stage: lint
+  image: gradle:8.5-jdk17
+  script:
+    - cd backend
+    - ./gradlew --no-daemon checkstyleMain checkstyleTest
+
+lint-frontend:
+  stage: lint
+  image: node:20
+  script:
+    - cd frontend
+    - npm ci
+    - npm run lint
+
+test-backend:
+  stage: test
+  image: gradle:8.5-jdk17
+  script:
+    - cd backend
+    - ./gradlew --no-daemon test jacocoTestReport
+    - >
+      awk -F"," 'NR>1 {missed+=$4;covered+=$5}
+      END {total=missed+covered;
+      printf("JaCoCo instruction coverage: %.2f%% (%d/%d)\n",
+      total ? (covered/total)*100 : 0, covered, total)}' build/reports/jacoco/test/jacocoTestReport.csv
+  coverage: '/JaCoCo instruction coverage: ([0-9]+\.[0-9]+)%/'
+  artifacts:
+    when: always
+    paths:
+      - backend/build/reports/jacoco/test/jacocoTestReport.csv
+
+test-frontend:
+  stage: test
+  image: node:20
+  script:
+    - cd frontend
+    - npm ci
+    - npm run test:ci
+  coverage: '/All files.*\s+(\d+)%/'
+  artifacts:
+    when: always
+    paths:
+      - frontend/coverage

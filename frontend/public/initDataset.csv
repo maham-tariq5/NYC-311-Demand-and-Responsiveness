@@ -1,0 +1,6 @@
+uniqueKey,complaintType,descriptorType,agencyName,locationType,incidentAddress,incidentZip,addressType,city,status,createdDate,closedDate,communityBoard,borough,openDataChannelType,latitude,longitude
+1,Noise - Residential,Loud Music,NYC Department,Street,123 Main St,10001,ADDRESS,New York,Open,2023-01-10 08:15:00,2023-01-10 10:30:00,CB1,Manhattan,Phone,40.7128,-74.0060
+2,Illegal Parking,Blocked Driveway,DEP,Driveway,456 Elm St,11201,ADDRESS,Brooklyn,Closed,2023-02-14 14:20:00,2023-02-14 16:00:00,CB2,Brooklyn,Web,40.6782,-73.9442
+3,Water Leak,Leakage,Water Board,Residence,789 Oak Ave,10453,ADDRESS,Bronx,Open,2023-03-08 09:45:00,,CB3,Bronx,Mobile,40.8448,-73.8648
+4,Heat/Hot Water,No Heat,Buildings Department,Apartment,321 Pine Rd,10301,ADDRESS,Staten Island,Closed,2023-04-01 06:30:00,2023-04-01 12:00:00,CB4,Staten Island,Email,40.5795,-74.1502
+5,Street Light Condition,Light Out,Con Edison,Street,654 Maple Blvd,11211,ADDRESS,Brooklyn,Open,2023-05-21 20:10:00,,CB2,Brooklyn,Phone,40.7130,-73.9565

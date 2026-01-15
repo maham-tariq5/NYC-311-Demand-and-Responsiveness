@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+    <!-- Max line length -->
+    <module name="LineLength">
+        <property name="max" value="300"/>
+        <property name="ignorePattern" value="^package.*|^import.*"/>
+    </module>
+
+    <!-- No tabs -->
+    
+    <!-- Enforce exactly three blank lines -->
+    <module name="RegexpMultiline">
+        <property name="format" value="(\n\s*\n\s*\n\s*\n)"/>
+        <property name="message" value="Exactly three blank lines required between methods/classes."/>
+    </module>
+
+    <module name="TreeWalker">
+
+        <!-- ===== Naming Rules ===== -->
+
+        <!-- Classes must be PascalCase -->
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Constants remain DEFAULT: UPPER_CASE -->
+        <module name="ConstantName"/>
+
+        <!-- Variables must be camelCase -->
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Methods must be camelCase -->
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- ===== Comments ===== -->
+        
+        <module name="TodoComment"/>
+
+        <!-- ===== Indentation ===== -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+            <property name="tabWidth" value="4"/>
+        </module>
+
+        <!-- ===== Braces on same line ===== -->
+        <module name="LeftCurly">
+            <property name="option" value="eol"/>
+        </module>
+
+        <!-- ===== Blank Lines ===== -->
+        <!-- Enforce at least one -->
+        <module name="EmptyLineSeparator">
+            <property name="allowMultipleEmptyLines" value="true"/>
+            <property name="tokens" value="CLASS_DEF, METHOD_DEF, VARIABLE_DEF"/>
+        </module>
+
+        
+
+    </module>
+</module>

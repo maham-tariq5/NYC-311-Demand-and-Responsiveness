@@ -1,0 +1,47 @@
+#Docker Compose is a tool for defining and running multi-container Docker applications. 
+#With Docker Compose, you use a YAML file to configure your application's services, networks, volumes, and other resources.
+
+#This section defines the containers that make up your application. Each service represents a container with its configuration
+services:  # Defines the services that make up the application
+  backend:  # The Spring application service
+    build: ./backend  # Builds the Docker image from the Dockerfile located in the './backend' directory
+    ports:
+      - "8080:8080"  # Exposes port 8080 on the host and maps it to port 8080 in the container
+    environment:  # Environment variables for the backend service
+      - DB_ADDRESS=jdbc:mysql://database:3306  # Hostname and port of the database service
+      - DB_DATABASE=template_db  # The database name (matches MYSQL_DATABASE below)
+      - DB_USER=root  # Database username
+      - DB_PASSWORD=pwd  # Database password (matches MYSQL_ROOT_PASSWORD below)
+    networks:  # Networks the Spring service is connected to
+      - backend-database  # Network for communicating with MySQL
+      - backend-frontend  # Network for communicating with the React service
+    depends_on:  # Ensures database starts before backend
+      - database
+
+  database:  # The MySQL database service
+    build: ./database  # Builds the Docker image from the Dockerfile in the './database' directory
+    environment:  # Environment variables for the MySQL service
+      - MYSQL_ROOT_PASSWORD=pwd  # The root password for MySQL
+      - MYSQL_DATABASE=template_db  # The database to create when the container starts
+    volumes:  # Persistent storage for the MySQL database
+      - mariadb_data:/var/lib/mysql  # Maps 'mariadb_data' volume to the data directory of MySQL
+    networks:  # Network the MySQL service is connected to
+      - backend-database  # Network for communicating with the Spring service
+    ports:
+      - "3306:3306"  # Exposes port 3306 on the host and maps it to port 3306 in the container
+
+  frontend:  # The React frontend service
+    build: ./frontend  # Builds the Docker image from the Dockerfile in the './frontend' directory
+    ports:
+      - "3000:3000"  # Exposes port 3000 on the host and maps it to port 3000 in the container
+    environment:  # Environment variable for the React service
+      - BACKEND_PROXY=http://backend:8080  # The URL to the backend Spring service
+    networks:  # Network the React service is connected to
+      - backend-frontend  # Network for communicating with the Spring service
+
+volumes:
+  mariadb_data:  # Defines a named volume 'mariadb_data' for the MySQL service to use for data persistence
+
+networks:  # Defines the networks used by the services
+  backend-database:  # Network used by the backend and database services
+  backend-frontend:  # Network used by the backend and frontend services
