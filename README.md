@@ -19,7 +19,7 @@ The platform visualizes large volumes of 311 complaints to highlight areas with 
 
 **Data Table & Reports**
 - Explore complaint data in a structured, sortable table format for detailed inspection and reporting.
-![Report Table](Report Table.png)
+![Table](Table.png)
 
 **Chart-Based Insights**
 - Analyze complaint distributions using pie chart to quickly understand trends and category breakdowns.
