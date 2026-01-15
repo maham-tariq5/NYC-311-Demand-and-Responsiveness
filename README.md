@@ -27,7 +27,7 @@ Analyze complaint distributions using pie chart to quickly understand trends and
 
 Short instructions to get this project running locally or with Docker Compose.
 
-**Prerequisites**
+## Prerequisites
 - **Docker & Docker Compose**: Docker Engine with Compose (or `docker compose`) installed.
 - **Node.js & npm** (for frontend local development): Node 14.
 - **Java & Gradle** (for backend local development): JDK 11+; the project includes the Gradle wrapper.
@@ -87,7 +87,7 @@ locally in your environment as 'dataset/initDataset.csv'
 
 - The dataset used for seeding is `database/dataset/initDataset.csv` and `frontend/public/initDataset.csv`.
 
-**Testing and linting**
+## Testing and linting
 - Frontend unit tests: `cd frontend && npm test`.
 - Backend unit tests: `cd backend && ./gradlew test`.
 
