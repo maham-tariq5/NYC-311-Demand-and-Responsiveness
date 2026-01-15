@@ -8,14 +8,14 @@ The platform visualizes large volumes of 311 complaints to highlight areas with 
 **Interactive Map Visualization**
 - View NYC 311 complaint data on an interactive map with support for filtering by complaint type, location, date range, and other attributes.
 
-### Heatmap Analysis
-Identify high-density complaint areas using a heatmap overlay, making it easy to spot service demand hotspots across the city.
+**Heatmap Analysis**
+- Identify high-density complaint areas using a heatmap overlay, making it easy to spot service demand hotspots across the city.
 
-### Data Table & Reports
-Explore complaint data in a structured, sortable table format for detailed inspection and reporting.
+**Data Table & Reports**
+- Explore complaint data in a structured, sortable table format for detailed inspection and reporting.
 
-### Chart-Based Insights
-Analyze complaint distributions using pie chart to quickly understand trends and category breakdowns.
+**Chart-Based Insights**
+- Analyze complaint distributions using pie chart to quickly understand trends and category breakdowns.
 
 
 
