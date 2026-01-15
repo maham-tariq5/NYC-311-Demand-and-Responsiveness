@@ -11,12 +11,19 @@ The platform visualizes large volumes of 311 complaints to highlight areas with 
 
 **Heatmap Analysis**
 - Identify high-density complaint areas using a heatmap overlay, making it easy to spot service demand hotspots across the city.
+![Heatmap](Heatmap.png)
+
+### Pin-Based Filtering
+- Explore individual complaint points using pins on the map for precise location tracking.  
+![Pin](Pin.png)
 
 **Data Table & Reports**
 - Explore complaint data in a structured, sortable table format for detailed inspection and reporting.
+![Report Table](Report Table.png)
 
 **Chart-Based Insights**
 - Analyze complaint distributions using pie chart to quickly understand trends and category breakdowns.
+![Pie Chart](Piechart.png)
 
 
 
