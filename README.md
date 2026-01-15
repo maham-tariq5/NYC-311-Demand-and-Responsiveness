@@ -25,7 +25,11 @@ The platform visualizes large volumes of 311 complaints to highlight areas with 
 - Analyze complaint distributions using pie chart to quickly understand trends and category breakdowns.
 ![Pie Chart](Piechart.png)
 
-
+## Tech Stack
+- Frontend: React.js & Typescript
+- Backend: Java (Springboot)
+- Database: MariaDB
+- DevOps/Deployment: Docker, Docker Compose, GitLab CI/CD pipelines
 
 
 
