@@ -5,7 +5,7 @@
 The platform visualizes large volumes of 311 complaints to highlight areas with high demand and recurring issues, enabling teams to better understand service pressures, prioritize resources, and improve response efficiency. By combining an interactive frontend with a scalable backend and database, the project demonstrates how urban service data can be transformed into actionable insights for operational decision-making.
 
 ## Features
-***Interactive Map Visualization***
+**Interactive Map Visualization**
 View NYC 311 complaint data on an interactive map with support for filtering by complaint type, location, date range, and other attributes.
 
 ### Heatmap Analysis
