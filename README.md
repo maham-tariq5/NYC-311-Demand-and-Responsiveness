@@ -1,7 +1,7 @@
 # Demand and Responsiveness
 
 **Overview**
-data-driven web application that analyzes NYC 311 service request data to help identify complaint hotspots, trends, and response patterns across the city.
+- data-driven web application that analyzes NYC 311 service request data to help identify complaint hotspots, trends, and response patterns across the city.
 The platform visualizes large volumes of 311 complaints to highlight areas with high demand and recurring issues, enabling teams to better understand service pressures, prioritize resources, and improve response efficiency. By combining an interactive frontend with a scalable backend and database, the project demonstrates how urban service data can be transformed into actionable insights for operational decision-making.
 
 
